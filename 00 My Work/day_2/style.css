@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Muli", sans-serif;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f7fb;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  /* create space between flex items */
+  justify-content: space-between;
+  /* position relative so we can use position absolute on the line */
+  position: relative;
+  /* space between container and buttons */
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+
+.progress-container::before {
+  /* must add content in order to use before */
+  content: "";
+  /* the line behind it that covered by the blue line */
+  background: var(--line-border-empty);
+  /* so it appears on top of the progress */
+  position: absolute;
+  /* center in the container */
+  top: 50%;
+  left: 0;
+  /* make it actually in the middle and not begin from the middle */
+  transform: translateY(-50%);
+  /* the height (thickness) of the line */
+  height: 4px;
+  /* starts from 0 as it begins from 1 and gets wider */
+  width: 100%;
+  /* behind the numbers */
+  z-index: -1;
+}
+
+.progress {
+  background: var(--line-border-fill);
+  /* so it appears on top of the progress */
+  position: absolute;
+  /* center in the container */
+  top: 50%;
+  left: 0;
+  /* make it actually in the middle and not begin from the middle */
+  transform: translateY(-50%);
+  /* the height (thickness) of the line */
+  height: 4px;
+  /* starts from 0 as it begins from 1 and gets wider */
+  width: 0%;
+  /* behind the numbers */
+  z-index: -1;
+  /* so it doesn't widen too quickly */
+  transition: 0.4s ease;
+}
+
+.circle {
+  background-color: white;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  /* center font */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px dashed var(--line-border-empty);
+  transition: 0.4s ease;
+}
+.circle.active {
+  border: 3px solid var(--line-border-fill);
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
+}

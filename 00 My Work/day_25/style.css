@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #222;
+  padding-bottom: 50px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* TODO: Nav */
+.hero {
+  background-image: url('computer.jpg');
+  background-repeat: no-repeat;
+  /* fixed the aspect ratio */
+  background-size: cover;
+  /* (x,y): since the picture has to be lowered a bit */
+  background-position: bottom center;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
