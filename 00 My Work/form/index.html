@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Form Practice Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- novalidate turns off auto validation -->
+      <form class="form" action="#">
+        <label for="email">Email:</label>
+        <input required id="email" minlength="5" type="email" name="email" />
+        <span></span>
+
+        <label for="country">Country:</label>
+        <input
+          required
+          id="country"
+          type="text"
+          minlength="4"
+          name="country"
+          pattern="[A-Za-z]+"
+        />
+        <span></span>
+
+        <label for="zip-code">Zip Code:</label>
+        <input
+          required
+          id="zip-code"
+          type="text"
+          name="zip-code"
+          pattern="[0-9]*"
+        />
+        <span></span>
+
+        <label for="password">Password:</label>
+        <input required id="password" type="password" name="password" />
+        <span></span>
+
+        <label for="password-2">Confirm Password:</label>
+        <input required id="password-2" type="password" name="password-2" />
+        <span></span>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
