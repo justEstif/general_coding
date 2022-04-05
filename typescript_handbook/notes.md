@@ -1,7 +1,3 @@
-Types by Inference
+# TypeScript for JS Programmers
 
-- if you don't assign a value to the variable, TSC will do so for you
-
-Defining Types
-
--
+-<F5>
