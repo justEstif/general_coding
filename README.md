@@ -1,3 +1,8 @@
-# HTML, CSS, JS
+# Random Practice
 
-I use this repo to practice git and github usage. I also upload some of the file I create using practice tutorials outside of The Odin Project.
+This folder is mostly for keep some random things I am learning outside of The Odin Project's ciriculum because I find it to be interesting.
+
+
+Currently: 
+- TypeScript
+- Questions from CodeWars

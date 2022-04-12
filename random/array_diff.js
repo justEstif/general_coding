@@ -31,3 +31,4 @@ function arrayDiff(a, b) {
 let a = [1, 2];
 let b = [1];
 console.log(arrayDiff(a, b));
+console.log('Hello')

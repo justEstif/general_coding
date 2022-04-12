@@ -1,0 +1,17 @@
+#+title: Code Wars
+
++ General Guideline to Problem Solving
+  - Understand and explain the problem to a duck
+  - Plan
+  - Pseudocode and research applicable functions
+  - Divide and Conquer
+
+* Convert string to camel case
+- Complete the method/function so that it converts dash/underscore delimited words into camel casing.
+- The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+#+begin_example
+"the-stealth-warrior" -> "theStealthWarrior"
+"The_Stealth_Warrior" -> "TheStealthWarrior"
+#+end_example
+- Solving:
+  + function takes in a string and capitalies every word that comes after '-' or '_'
