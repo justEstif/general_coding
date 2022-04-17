@@ -15,3 +15,71 @@
 #+end_example
 - Solving:
   + function takes in a string and capitalies every word that comes after '-' or '_'
+* RGB To HEX Conversion
+- The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+- Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+#+begin_example
+rgb(255, 255, 255) -> "FFFFFF"
+rgb(148, 0, 211) -> "9400D3"
+#+end_example
+- Solving
+  - Understand the problem:
+    - function rgb(r,b,g): functions takes in 3 values
+      - question: will they keep as number or become strings
+    - returns HEX numbers
+    - if:
+      - [0-9]: keep number
+    - else:
+      - alphabet[number]: use alphabet at spot
+
+  - How to rgb -> hex?
+    1. x = r/16
+       - Math.floor(x) = first digit
+    2. y = r - (16*x)
+       - 16*y = second digit
+    3. q = g / 16
+       - Math.floor(q) = third digit
+    4. w = g - (16*q)
+       - 16 * w = fourth digit
+    5. o = b / 16
+       - Math.floor(o) = fifth digit
+    6. p = b - (16 * o)
+       - 16 * p = sixth digit
+       - if digit > 9 -> use alphabet
+
+- I am having trouble finding a formula. I will return to this at a later date.
+* Calculating with functions
+- This time we want to write calculations using functions and get the results. Let's have a look at some examples:
+  #+begin_example
+seven(times(five())); // must return 35
+four(plus(nine())); // must return 13
+eight(minus(three())); // must return 5
+six(dividedBy(two())); // must return 3
+  #+end_example
+- Requirements
+  - There must be a function for each number from 0 ("zero") to 9 ("nine")
+  - There must be a function for each  of the following mathematical operations: plus, minus, times, divided
+  - Each calculation consist of exactly one operation and two numbers
+  - The most outer function represents the left operand, the most inner function represents the right operand
+  - Division should be integer division. For example, this should return 2, not 2.666666...:
+    - eight(dividedBy(three()));
+- basically do a return number or return function
+
+
+*I will start using Code Wars as a way to practice TDD and unit-testing*
+* Moving Zeros to the End
+- Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+- algo idea:
+  - get arr -> check if element is zero -> filter -> counter++ -> push counter amount of zeros to end
+- go through array -> map / forEach
+- if value is not zero, skip, if 0, split and push 0 to end
+
+- Final solution:
+
+  - reverse arr -> if element is zero -> move to beginning -> reverse back
+    - i realized later that I could have left the whole reverse and reverse back, but it helped me understand the problem
+
+    - for some reason the if there are more than one zeros in the array, it doesn't add to the array
+      - I used unshift instead of newArr[0] to fix the issue
+
+    - passed both tests
