@@ -1,6 +1,6 @@
 #+title: TypeScript Handbook
 
 * The Basics
-+ JS is dynamically typed: it only checks type on runtime
++ JavaScript is dynamically typed: it only checks type on runtime
   - the only way to check if something works(without extra code), is to run the code and hope for no errors
-  - if we don't check throughly, we can get unexpected errors at later time
+  - if we don't check thoroughly, we can get unexpected errors at later time

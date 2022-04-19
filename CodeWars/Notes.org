@@ -1,5 +1,5 @@
 #+title: Code Wars
-
+#+startup: overview
 + General Guideline to Problem Solving
   - Understand and explain the problem to a duck
   - Plan
@@ -83,3 +83,10 @@ six(dividedBy(two())); // must return 3
       - I used unshift instead of newArr[0] to fix the issue
 
     - passed both tests
+* Most frequently used words in a text
+- Write a function that, given a string of text (possibly with punctuation and line-breaks), returns an array of the top-3 most occurring words, in descending order of the number of occurrences.
+- Apostrophes can appear at the start, middle or end of a word ('abc, abc', 'abc', ab'c are all valid)
+  - any other characters are not part of a work and should be treated as whitespace
+- Matches should be case-insensitive, and the words in the result should be lowercased.
+- Matches should be case-insensitive, and the words in the result should be lowercased.
+
