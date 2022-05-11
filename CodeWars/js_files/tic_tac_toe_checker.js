@@ -13,32 +13,28 @@
 * return 0: draw
 */
 
-let board = [[0, 0, 1], [0, 1, 2], [2, 1, 0]]
-let board1 = [[1, 2, 1], [1, 1, 2], [2, 2, 0]] // -1
+// let board = [[0, 0, 1], [0, 1, 2], [2, 1, 0]]
+// let board1 = [[1, 2, 1], [1, 1, 2], [2, 2, 0]] // -1
+
 let board2 = [[2, 1, 1], [0, 1, 1], [2, 2, 2]]  // 2
 function isSolved(board) {
-  let diagonal1 = []
-  let diagonal2 = []
+  let game = 0
+  let diagonals = [[], []]
   for (let i = 0; i < board.length; i++) {
-    diagonal1.push(board[i][i])
-    diagonal2.push(board[i][board.length - 1 - i])
+    diagonals[0].push(board[i][i])
+    diagonals[1].push(board[i][2 - i])
   }
-  console.log(diagonal1)
-  console.log(diagonal2)
-  for (let i = 0; i < board.length; i++) {
-    if (board[i].some(x => x === 0)) return -1
-
-    if (board[i].every(x => x === 1)) return 1
-    if (board[i].every(x => x === 2)) return 2
-
-    if (diagonal1.every(x => x === 1)) return 1
-    if (diagonal1.every(x => x === 2)) return 2
-
-    if (diagonal2.every(x => x === 1)) return 1
-    if (diagonal2.every(x => x === 2)) return 2
-
-    if (board.every(x => x !== 0)) return 0
+  for (const diagonal of diagonals) {
+    if (diagonal.every(x => x === 1)) return 1
+    if (diagonal.every(x => x === 2)) return 2
   }
+  for (const row of board) {
+    if (row.every(x => x === 1)) return 1
+    if (row.every(x => x === 2)) return 2
+    if (row.some(x => x === 0)) game = -1
+  }
+  return game;
+
 }
 let value = isSolved(board2)
 console.log("expect 2")
